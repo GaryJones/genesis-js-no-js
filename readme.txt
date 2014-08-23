@@ -15,12 +15,14 @@ Make front-end styling easier for child themes on the <a href="http://genesis-th
 Adds a `no-js` body class to the front-end, and a script on `genesis_before` which immediately changes the class to `js` if JavaScript is enabled.
 This is how WP does things on the back-end, to allow different styles for the same elements depending if JavaScript is active or not.
 
-This plugin is only useful if you're using a child theme of the <a href="http://genesis-theme-framework.com/">Genesis Framework</a> since it needs to use the `genesis_before` hook.
+This plugin is only useful if you're using a child theme of the Genesis Framework since it uses the `genesis_before` hook.
 
 == Installation ==
 
 1. Unzip and upload `genesis-js-no-js` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
+
+Once installed and activated, then the plugin will work. There are no options, and nothing to set-up.
 
 == Frequently Asked Questions ==
 
