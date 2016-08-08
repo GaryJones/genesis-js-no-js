@@ -5,6 +5,7 @@
 * Load plugin text domain.
 * Add `composer.json`.
 * Better [change log format][changelogformat].
+* Tweak documentation.
 
 ## [2.0.0] - 2014-08-23
 

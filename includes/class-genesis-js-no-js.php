@@ -1,10 +1,9 @@
 <?php
 /**
- * Genesis Header Nav
+ * Genesis JS No Js
  *
- * @package   GenesisJsNoJs
+ * @package   Gamajo\GenesisJsNoJs
  * @author    Gary Jones
- * @link      https://github.com/GaryJones/genesis-header-nav
  * @copyright 2011 Gary Jones, Gamajo Tech
  * @license   GPL-2.0+
  */

@@ -3,15 +3,14 @@
  * Genesis js / no-js WordPress plugin.
  *
  * For child themes of the Genesis Framework.
- * 
+ *
  * Adds a no-js body class to the front-end, and a script on genesis_before
  * which immediately changes the class to js if JavaScript is enabled. This is
  * how WP does things on the back-end, to allow different styles for the same
  * elements depending if JavaScript is active or not.
  *
- * @package   GenesisJsNoJs
+ * @package   Gamajo\GenesisJsNoJs
  * @author    Gary Jones
- * @link      https://github.com/GaryJones/genesis-js-no-js
  * @copyright 2011 Gary Jones, Gamajo Tech
  * @license   GPL-2.0+
  *
