@@ -4,7 +4,7 @@ Donate link: http://code.garyjones.co.uk/donate/
 Tags: genesis, js-no-js
 Requires at least: 3.0
 Tested up to: 4.6.0
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 
 Make front-end styling easier for child themes on the Genesis Framework based on whether JavaScript is enabled or not.
 
@@ -42,6 +42,12 @@ Doing it immediately also reduces a flash of incorrectly styled content, as the 
 
 == Changelog ==
 
+= 2.1.0 =
+* Load plugin text domain.
+* Add `composer.json`.
+* Better change log format.
+* Tweak documentation.
+
 = 2.0.0 =
 * GitHub Updater plugin support
 * Refactor class into a new file. Stops using half-implemented Singleton pattern.
@@ -54,6 +60,9 @@ Doing it immediately also reduces a flash of incorrectly styled content, as the 
 * First public version.
 
 == Upgrade Notice ==
+
+= 2.1.0 =
+Load plugin text domain.
 
 = 2.0.0 =
 Update to add GitHub Updater plugin support.
