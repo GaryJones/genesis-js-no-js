@@ -1,0 +1,29 @@
+{
+    "name": "gamajo/genesis-js-no-js",
+    "description": "WordPress plugin for Genesis child themes to allow differing styles for elements if JavaScript is active or not.",
+    "keywords": ["genesis", "genesis-js-no-js", "javascript"],
+    "type": "wordpress-plugin",
+    "homepage": "https://github.com/GaryJones/genesis-js-no-js",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Gary Jones",
+            "homepage": "https://gamajo.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/GaryJones/genesis-js-no-js/issues",
+        "source": "https://github.com/GaryJones/genesis-js-no-js"
+    },
+    "require": {
+        "composer/installers": "~1.0",
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.6",
+        "wp-coding-standards/wpcs": ">=0.9"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
