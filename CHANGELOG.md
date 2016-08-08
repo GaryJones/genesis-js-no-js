@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-_Nothing yet._
+* Tweak documentation.
 
 ## [2.1.0] - 2016-08-08
 
