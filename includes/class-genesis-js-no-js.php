@@ -23,8 +23,18 @@ class Genesis_Js_No_Js {
 	 * @since 1.0.0
 	 */
 	public function run() {
+		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 		add_filter( 'body_class', array( $this, 'body_class' ) );
 		add_action( 'genesis_before', array( $this, 'script' ), 1 );
+	}
+
+	/**
+	 * Load plugin text domain.
+	 *
+	 * @since 2.1.0
+	 */
+	public function load_textdomain() {
+		load_plugin_textdomain( 'genesis-js-no-js' );
 	}
 
 	/**
