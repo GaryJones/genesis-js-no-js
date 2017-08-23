@@ -4,9 +4,13 @@
  *
  * @package   Gamajo\GenesisJsNoJs
  * @author    Gary Jones
- * @copyright 2011 Gary Jones, Gamajo Tech
+ * @copyright 2011 Gary Jones, Gamajo
  * @license   GPL-2.0+
  */
+
+declare( strict_types = 1 );
+
+namespace Gamajo\GenesisJsNoJs;
 
 /**
  * Plugin class.
@@ -14,26 +18,16 @@
  * @package GenesisJsNoJs
  * @author  Gary Jones
  */
-class Genesis_Js_No_Js {
+class GenesisJsNoJs {
 
 	/**
 	 * Add action and filter.
 	 *
 	 * @since 1.0.0
 	 */
-	public function run() {
-		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
-		add_filter( 'body_class', array( $this, 'body_class' ) );
-		add_action( 'genesis_before', array( $this, 'script' ), 1 );
-	}
-
-	/**
-	 * Load plugin text domain.
-	 *
-	 * @since 2.1.0
-	 */
-	public function load_textdomain() {
-		load_plugin_textdomain( 'genesis-js-no-js' );
+	public function run(): void {
+		\add_filter( 'body_class', [ $this, 'body_class' ] );
+		\add_action( 'genesis_before', [ $this, 'script' ], 1 );
 	}
 
 	/**
@@ -44,8 +38,9 @@ class Genesis_Js_No_Js {
 	 * @param array $classes Existing classes.
 	 * @return array
 	 */
-	public function body_class( $classes ) {
+	public function body_class( array $classes ) : array {
 		$classes[] = 'no-js';
+
 		return $classes;
 	}
 
@@ -54,7 +49,7 @@ class Genesis_Js_No_Js {
 	 *
 	 * @since 1.0.0
 	 */
-	public function script() {
+	public function script(): void {
 		?>
 <script type="text/javascript">
 //<![CDATA[

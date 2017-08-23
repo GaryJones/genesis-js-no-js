@@ -8,15 +8,6 @@ notifications:
     on_success: never
     on_failure: change
 
-php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-  - 7.1
-  - 7.2
-  - nightly
-
 matrix:
   fast_finish: true
   include:
@@ -43,9 +34,8 @@ script:
   # Lint the PHP files against parse errors.
   - if [[ "$LINT" == "1" ]]; then if find . -name "*.php" -maxdepth 1 -exec php -l {} \; | grep "^[Parse error|Fatal error]"; then exit 1; fi; fi
   - if [[ "$LINT" == "1" ]]; then if find config src tests views -name "*.php" -exec php -l {} \; | grep "^[Parse error|Fatal error]"; then exit 1; fi; fi
-  # Validate the xml files.
+  # Validate the xml file.
   # @link http://xmlsoft.org/xmllint.html
   - if [[ "$LINT" == "1" ]]; then xmllint --noout ./phpcs.xml.dist; fi
-  - if [[ "$LINT" == "1" ]]; then xmllint --noout --schema ./vendor/phpunit/phpunit/phpunit.xsd ./phpunit.xml.dist; fi
   # Check coding standards.
   - if [[ "$SNIFF" == "1" ]]; then ./vendor/bin/phpcs; fi

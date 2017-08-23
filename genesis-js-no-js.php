@@ -11,13 +11,13 @@
  *
  * @package   Gamajo\GenesisJsNoJs
  * @author    Gary Jones
- * @copyright 2011 Gary Jones, Gamajo Tech
+ * @copyright 2011 Gary Jones, Gamajo
  * @license   GPL-2.0+
  *
  * @wordpress-plugin
- * Plugin Name:       Genesis js / no-js
+ * Plugin Name:       Genesis JS / No JS
  * Plugin URI:        https://github.com/GaryJones/genesis-js-no-js
- * Description:       For child themes of the <a href="http://genesis-theme-framework.com/">Genesis Framework</a>. Adds a <code>no-js</code> body class to the front-end, and a script on <code>genesis_before</code> which immediately changes the class to <code>js</code> if JavaScript is enabled. This is how WP does things on the back-end, to allow differing styles for elements if JavaScript is active or not.
+ * Description:       For child themes of the <a href="http://genesis-theme-framework.com/">Genesis Framework</a>. Adds a <code>no-js</code> body class to the front end, and a script on <code>genesis_before</code> which immediately changes the class to <code>js</code> if JavaScript is enabled. This is how WP does things on the back end, to allow differing styles for elements if JavaScript is active or not.
  * Version:           2.1.0
  * Author:            Gary Jones
  * Author URI:        https://gamajo.com
@@ -28,11 +28,14 @@
  * GitHub Branch:     master
  */
 
+if ( version_compare( PHP_VERSION, '7.1', '<' ) ) {
+	return false;
+}
+
 /**
  * Load include files.
  */
+require __DIR__ . '/src/GenesisJsNoJs.php';
 
-require plugin_dir_path( __FILE__ ) . 'includes/class-genesis-js-no-js.php';
-
-$genesis_js_no_js = new Genesis_Js_No_Js();
+$genesis_js_no_js = new Gamajo\GenesisJsNoJs\GenesisJsNoJs();
 $genesis_js_no_js->run();
