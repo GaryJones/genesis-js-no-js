@@ -1,6 +1,6 @@
 <?php
 /**
- * Genesis js / no-js WordPress plugin.
+ * Genesis js / no-js WordPress plugin
  *
  * For child themes of the Genesis Framework.
  *
@@ -28,7 +28,11 @@
  * GitHub Branch:     master
  */
 
+/**
+ * Load include files.
+ */
+
 require plugin_dir_path( __FILE__ ) . 'includes/class-genesis-js-no-js.php';
 
-$genesis_js_no_js = new Genesis_Js_No_Js;
+$genesis_js_no_js = new Genesis_Js_No_Js();
 $genesis_js_no_js->run();

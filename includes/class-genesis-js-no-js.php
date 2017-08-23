@@ -41,7 +41,7 @@ class Genesis_Js_No_Js {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $classes Existing classes
+	 * @param array $classes Existing classes.
 	 * @return array
 	 */
 	public function body_class( $classes ) {
