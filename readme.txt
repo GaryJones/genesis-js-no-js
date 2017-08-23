@@ -3,7 +3,7 @@ Contributors: GaryJ
 Donate link: http://code.garyjones.co.uk/donate/
 Tags: genesis, js-no-js
 Requires at least: 3.0
-Tested up to: 4.6.0
+Tested up to: 4.8.1
 Stable tag: 2.1.0
 
 Make front-end styling easier for child themes on the Genesis Framework based on whether JavaScript is enabled or not.
