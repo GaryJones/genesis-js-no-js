@@ -59,9 +59,9 @@ class Genesis_Js_No_Js {
 <script type="text/javascript">
 //<![CDATA[
 (function(){
-var c = document.body.className;
-c = c.replace(/no-js/, 'js');
-document.body.className = c;
+var c = document.body.classList;
+c.remove( 'no-js' );
+c.add( 'js' );
 })();
 //]]>
 </script>
