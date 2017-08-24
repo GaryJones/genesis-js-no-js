@@ -39,20 +39,20 @@ if ( ! defined( 'WPINC' ) ) {
 
 if ( version_compare( PHP_VERSION, '7.1', '<' ) ) {
 	if ( current_user_can( 'activate_plugins' ) ) {
-		add_action( 'admin_init', 'plugin_slug_deactivate' );
-		add_action( 'admin_notices', 'plugin_slug_deactivation_notice' );
+		add_action( 'admin_init', 'genesis_js_no_js_deactivate' );
+		add_action( 'admin_notices', 'genesis_js_no_js_deactivation_notice' );
 
 		/**
 		 * Deactivate the plugin.
 		 */
-		function plugin_slug_deactivate() {
+		function genesis_js_no_js_deactivate() {
 			deactivate_plugins( plugin_basename( __FILE__ ) );
 		}
 
 		/**
 		 * Show deactivation admin notice.
 		 */
-		function plugin_slug_deactivation_notice() {
+		function genesis_js_no_js_deactivation_notice() {
 			$notice = sprintf(
 				// Translators: 1: Required PHP version, 2: Current PHP version.
 				'<strong>Plugin name</strong> requires PHP %1$s to run. This site uses %2$s, so the plugin has been <strong>deactivated</strong>.',
