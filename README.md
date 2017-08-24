@@ -1,14 +1,14 @@
-# Genesis js / no-js
+# Genesis JS / No JS
 
-Make front-end styling easier for child themes on the Genesis Framework based on whether JavaScript is enabled or not.
+Make front end styling easier for child themes on the Genesis Framework based on whether JavaScript is enabled or not.
 
 ## Description 
 
-If you look at the source of a WordPress back-end page, you'll see it has a body class of `no-js`. Immediately after the opening `body` tag is a small script which replaces `no-js` with `js` (you can see the amended class with Firebug / Inspector).
+If you look at the source of a WordPress back end page, you'll see it has a body class of `no-js`. Immediately after the opening `body` tag is a small script which replaces `no-js` with `js` (you can see the amended class with Firebug / Inspector).
 
 WordPress uses this to apply different styles to the same elements, depending on whether JavaScript is present or not.
 
-This plugin recreates the same effect, but for the front-end of <a href="http://genesis-theme-framework.com/">Genesis Framework</a> child themes. It uses the `genesis_before` hook supplied by Genesis, so it won't work for other themes.
+This plugin recreates the same effect, but for the front end of <a href="http://genesis-theme-framework.com/">Genesis Framework</a> child themes. It uses the `genesis_before` hook supplied by Genesis, so it won't work for other themes.
 
 The script is fairly small so does not block rendering of other content for any noticeable length of time.
 
@@ -42,6 +42,12 @@ Using git, browse to your `/wp-content/plugins/` directory and clone this reposi
 
 Then go to your Plugins screen and click __Activate__.
 
+### Composer
+
+~~~sh
+composer require gamajo/genesis-js-no-js
+~~~
+
 ## Updates
 
 This plugin supports the [GitHub Updater](https://github.com/afragen/github-updater) plugin, so if you install that, this plugin becomes automatically updateable direct from GitHub.
@@ -49,4 +55,4 @@ This plugin supports the [GitHub Updater](https://github.com/afragen/github-upda
 ## Credits
 
 Built by [Gary Jones](https://twitter.com/GaryJ)  
-Copyright 2011 [Gamajo Tech](http://gamajo.com/)
+Copyright 2011 [Gamajo](https://gamajo.com/)
