@@ -1,33 +1,73 @@
-# Genesis js / no-js Changelog
+# Change Log for Genesis JS / No JS
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-* Tweak documentation.
+## [3.0.0] - 2017-08-24
+
+### Added
+- Banner and icon PSDs to assets.
+- PHP version check in main plugin file.
+- GitHub documents and templates.
+- [Code of conduct].
+- [Travis CI] support.
+- `.gitattributes` file to reduce Git / Composer distributable archive size.
+- Coding standards checks and fixes.
+
+### Changed
+- [#2]: Bumped minimum required PHP version to **PHP 7.1**.
+- [#4]: Improved replacement technique, to avoid parsing class name string with a regular expression (props [Tim Jensen]).
+- Bumped minimum required WP version to **WordPress 4.6**.
+- Bumped Tested Up To version to 4.8.1.
+- Moved PHP 7.1+ code into separate `init.php` file.
+- Update documentation.
+
+### Removed
+- Explicit load plugin text domain call.
 
 ## [2.1.0] - 2016-08-08
 
-* Load plugin text domain.
-* Add `composer.json`.
-* Better [change log format][changelogformat].
-* Tweak documentation.
+### Added
+- Load plugin text domain.
+- `composer.json`.
+
+### Changed
+- Better [change log format].
+- Update documentation.
 
 ## [2.0.0] - 2014-08-23
 
-* GitHub Updater plugin support
-* Refactor class into a new file. Stops using half-implemented Singleton pattern.
-* Update documentation.
+### Added
+- GitHub Updater plugin support
+
+### Changed
+- Refactor class into a new file. Stops using half-implemented Singleton pattern.
+- Update documentation.
 
 ## [1.0.1] - 2011-06-02
 
-* Improved plugin so script is hooked in with priority 1 - avoids a theme placing anything before the script (props [Josh Stauffer])
+### Fixed
+- Hooked in with priority 1 to avoid a theme placing anything before the script (props [Josh Stauffer]).
 
 ## 1.0.0 - 2011-05-24
 
-* Initial release.
+- Initial release.
 
-[Unreleased]: https://github.com/GaryJones/genesis-js-no-js/compare/2.1.0...HEAD
+[#2]: https://github.com/GaryJones/genesis-js-no-js/issues/2
+[#4]: https://github.com/GaryJones/genesis-js-no-js/issues/4
+
+[change log format]: http://keepachangelog.com/en/1.0.0/
+[Code of conduct]: CODE_OF_CONDUCT.md
+[Josh Stauffer]: http://twitter.com/joshstauffer
+[Tim Jensen]: https://github.com/timothyjensen
+[Travis CI]: https://travis-ci.org/GaryJones/genesis-js-no-js
+
+[Unreleased]: https://github.com/GaryJones/genesis-js-no-js/compare/3.0.0...HEAD
+[3.0.0]: https://github.com/GaryJones/genesis-js-no-js/compare/2.1.0...3.0.0
 [2.1.0]: https://github.com/GaryJones/genesis-js-no-js/compare/2.0.0...2.1.0
 [2.0.0]: https://github.com/GaryJones/genesis-js-no-js/compare/1.0.1...2.0.0
 [1.0.1]: https://github.com/GaryJones/genesis-js-no-js/compare/1.0.0...1.0.1
-[changelogformat]: https://github.com/olivierlacan/keep-a-changelog#is-there-a-standard-change-log-format
-[Josh Stauffer]: http://twitter.com/joshstauffer
