@@ -6,8 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+Nothing yet.
+
+## [3.1.0] - 2017-11-28
 ### Added
 - `Requires PHP` header to `readme.txt`.
+
+### Changed
+- Dropped PHP requirement for running the plugin from 7.1 to 7.0.
 
 ## [3.0.1] - 2017-08-24
 ### Fixed
@@ -72,7 +79,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [Tim Jensen]: https://github.com/timothyjensen
 [Travis CI]: https://travis-ci.org/GaryJones/genesis-js-no-js
 
-[Unreleased]: https://github.com/GaryJones/genesis-js-no-js/compare/3.0.1...HEAD
+[Unreleased]: https://github.com/GaryJones/genesis-js-no-js/compare/3.1.0...HEAD
+[3.1.0]: https://github.com/GaryJones/genesis-js-no-js/compare/3.0.1...3.1.0
 [3.0.1]: https://github.com/GaryJones/genesis-js-no-js/compare/3.0.0...3.0.1
 [3.0.0]: https://github.com/GaryJones/genesis-js-no-js/compare/2.1.0...3.0.0
 [2.1.0]: https://github.com/GaryJones/genesis-js-no-js/compare/2.0.0...2.1.0
