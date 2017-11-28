@@ -10,7 +10,7 @@
     <arg name="report" value="source"/>
     <rule ref="ObjectCalisthenics"/>
     <rule ref="PHPCompatibility" />
-	<config name="testVersion" value="7.1-"/>
+	<config name="testVersion" value="7.0-"/>
     <rule ref="WordPress">
         <exclude name="WordPress.VIP"/>
     </rule>

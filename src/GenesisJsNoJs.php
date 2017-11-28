@@ -25,7 +25,7 @@ class GenesisJsNoJs {
 	 *
 	 * @since 1.0.0
 	 */
-	public function run(): void {
+	public function run() {
 		\add_filter( 'body_class', [ $this, 'body_class' ] );
 		\add_action( 'genesis_before', [ $this, 'script' ], 1 );
 	}
@@ -49,7 +49,7 @@ class GenesisJsNoJs {
 	 *
 	 * @since 1.0.0
 	 */
-	public function script(): void {
+	public function script() {
 		?>
 <script type="text/javascript">
 //<![CDATA[
