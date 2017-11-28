@@ -37,7 +37,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-if ( version_compare( PHP_VERSION, '7.1', '<' ) ) {
+if ( version_compare( PHP_VERSION, '7.0', '<' ) ) {
 	if ( current_user_can( 'activate_plugins' ) ) {
 		add_action( 'admin_init', 'genesis_js_no_js_deactivate' );
 		add_action( 'admin_notices', 'genesis_js_no_js_deactivation_notice' );
@@ -56,7 +56,7 @@ if ( version_compare( PHP_VERSION, '7.1', '<' ) ) {
 			$notice = sprintf(
 				// Translators: 1: Required PHP version, 2: Current PHP version.
 				'<strong>Plugin name</strong> requires PHP %1$s to run. This site uses %2$s, so the plugin has been <strong>deactivated</strong>.',
-				'7.1',
+				'7.0',
 				PHP_VERSION
 			);
 			?>
