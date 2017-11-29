@@ -72,6 +72,9 @@ See <a href="https://github.com/GaryJones/genesis-js-no-js/blob/master/CHANGELOG
 
 == Upgrade Notice ==
 
+= 3.1.1 =
+Requires PHP 7.0 and WordPress 4.6.
+
 = 3.0.1 =
 Requires PHP 7.1 and WordPress 4.6.
 
