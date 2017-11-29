@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Nothing yet.
 
+## [3.2.0] - 2017-11-29
+### Added
+- Unit tests, with 100% code coverage.
+- Mutation tests, with MSI of 100%.
+- `.editorconfig` file for code standards in IDEs.
+- New Plugin class which loads textdomain.
+
+### Changed
+- Name of main class.
+- Refreshed Travis config, switched to build stages.
+- Refreshed .gitattributes.
+
 ## [3.1.1] - 2017-11-29
 ### Changed
 - Rename PHPCS config file, since PHP_CodeSniffer 3.1 minimum is required.
@@ -86,7 +98,8 @@ Nothing yet.
 [Tim Jensen]: https://github.com/timothyjensen
 [Travis CI]: https://travis-ci.org/GaryJones/genesis-js-no-js
 
-[Unreleased]: https://github.com/GaryJones/genesis-js-no-js/compare/3.1.1...HEAD
+[Unreleased]: https://github.com/GaryJones/genesis-js-no-js/compare/3.2.0...HEAD
+[3.2.0]: https://github.com/GaryJones/genesis-js-no-js/compare/3.1.1...3.2.0
 [3.1.1]: https://github.com/GaryJones/genesis-js-no-js/compare/3.1.1...3.1.1
 [3.1.0]: https://github.com/GaryJones/genesis-js-no-js/compare/3.0.1...3.1.0
 [3.0.1]: https://github.com/GaryJones/genesis-js-no-js/compare/3.0.0...3.0.1

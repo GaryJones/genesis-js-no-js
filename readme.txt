@@ -3,9 +3,9 @@ Contributors: GaryJ
 Donate link: http://code.garyjones.co.uk/donate/
 Tags: genesis, js-no-js
 Requires at least: 4.6
-Tested up to: 4.9.0
+Tested up to: 4.9.1
 Requires PHP: 7.0
-Stable tag: 3.1.1
+Stable tag: 3.2.0
 
 Make front end styling easier for child themes on the Genesis Framework based on whether JavaScript is enabled or not.
 
@@ -72,11 +72,5 @@ See <a href="https://github.com/GaryJones/genesis-js-no-js/blob/master/CHANGELOG
 
 == Upgrade Notice ==
 
-= 3.1.1 =
+= 3.2.0 =
 Requires PHP 7.0 and WordPress 4.6.
-
-= 3.0.1 =
-Requires PHP 7.1 and WordPress 4.6.
-
-= 3.0.0 =
-Requires PHP 7.1 and WordPress 4.6.
