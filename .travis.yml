@@ -16,8 +16,9 @@ php:
 matrix:
   fast_finish: true
   include:
-    # Run PHP CodeSniffer and XMLLint against just PHP 7.0 job.
-    - php: 7.0
+    # Run PHP CodeSniffer and XMLLint against just PHP 7.1 job, even
+    # though the PHPCompatibility config checks against 7.0.
+    - php: 7.1
       env: SNIFF=1 LINT=1
       addons:
         apt:
@@ -46,3 +47,6 @@ script:
   # Check coding standards. Run through composer script, to allow
   # PHP 5.2 compatibility check of main plugin file.
   - if [[ "$SNIFF" == "1" ]]; then composer phpcs; fi
+
+  # Run tests.
+  - ./vendor/bin/phpunit --testsuite unit

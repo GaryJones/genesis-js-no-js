@@ -28,16 +28,28 @@
     },
     "require-dev": {
         "php": "^7.1",
+        "brain/monkey": "^2.1",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
         "object-calisthenics/phpcs-calisthenics-rules": "^3",
+        "phpunit/phpunit": "^6.4",
         "squizlabs/php_codesniffer": "3.1",
         "wimg/php-compatibility": "dev-master",
         "wp-coding-standards/wpcs": "dev-develop"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gamajo\\GenesisJsNoJs\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gamajo\\GenesisJsNoJs\\Tests\\": "tests/"
+        }
     },
     "scripts": {
         "install-codestandards": [
             "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
         ],
-        "phpcs": "phpcs && phpcs ./genesis-js-no-js.php -sp --standard=PHPCompatibility --runtime-set testVersion 5.2"
+        "phpcs": "phpcs && phpcs ./genesis-js-no-js.php -sp --standard=PHPCompatibility --runtime-set testVersion 5.2 && phpcs ./tests -sp --standard=PHPCompatibility --runtime-set testVersion 7.1"
     }
 }
