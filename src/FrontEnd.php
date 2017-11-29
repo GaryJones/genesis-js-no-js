@@ -18,14 +18,14 @@ namespace Gamajo\GenesisJsNoJs;
  * @package GenesisJsNoJs
  * @author  Gary Jones
  */
-class GenesisJsNoJs {
+class FrontEnd {
 
 	/**
 	 * Add action and filter.
 	 *
 	 * @since 1.0.0
 	 */
-	public function run() {
+	public function register() {
 		\add_filter( 'body_class', [ $this, 'body_class' ] );
 		\add_action( 'genesis_before', [ $this, 'script' ], 1 );
 	}
@@ -51,7 +51,7 @@ class GenesisJsNoJs {
 	 */
 	public function script() {
 		?>
-<script type="text/javascript">
+<script>
 //<![CDATA[
 (function(){
 var c = document.body.classList;
@@ -60,6 +60,6 @@ c.add( 'js' );
 })();
 //]]>
 </script>
-		<?php
+<?php
 	}
 }
