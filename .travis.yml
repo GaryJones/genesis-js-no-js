@@ -1,5 +1,6 @@
-cache:
-  apt: true
+# Run in Container-based environment - see https://docs.travis-ci.com/user/reference/overview/#Virtualization-environments
+dist: trusty
+sudo: false
 
 language: php
 
@@ -13,43 +14,59 @@ php:
   - 7.2
   - nightly
 
-matrix:
-  fast_finish: true
+before_install:
+  # Turn off Xdebug
+  - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
+
+install: composer install --no-interaction
+
+stages:
+ - lint and code standards
+ - test
+
+jobs:
   include:
-    # Run PHP CodeSniffer and XMLLint against just PHP 7.1 job, even
-    # though the PHPCompatibility config checks against 7.0.
-    - php: 7.1
-      env: SNIFF=1 LINT=1
+    - stage: lint and code standards
+      # Run PHP CodeSniffer and XMLLint against just PHP 7.1 job, even
+      # though the PHPCompatibility config checks against 7.0.
+      php: 7.1
       addons:
         apt:
           packages:
-            - libxml2-utils
+           - libxml2-utils # Needed for XML linting.
+      before_script:
+        - export XMLLINT_INDENT="	"
+      script:
+        # Validate the XML files.
+        # @link http://xmlsoft.org/xmllint.html
+        - xmllint --noout ./.phpcs.xml.dist
+        - xmllint --noout --schema ./vendor/phpunit/phpunit/phpunit.xsd ./phpunit.xml.dist
 
+        # Lint the PHP files against parse errors.
+        - if find . -path ./vendor -prune -o -name "*.php" -exec php -l {} \; | grep "^[Parse error|Fatal error]"; then exit 1; fi
+
+        # Check code standards
+        - composer phpcs
+
+    - stage: test
+#      env: WP_VERSION=latest WP_MULTISITE=1
+#      install:
+#        - composer install --no-interaction
+#        - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
+      before_script:
+        - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
+        - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
+      script:
+        - vendor/bin/phpunit --testsuite unit
+        - vendor/bin/infection
+#        - vendor/bin/phpunit --testsuite integration
+
+  fast_finish: true
   allow_failures:
-    # Allow failures for unstable builds
-    - php: nightly
+      # Allow failures for unstable builds.
+      - php: nightly
 
-before_install:
-  - export XMLLINT_INDENT="	"
-
-install:
-  - composer install
-
-script:
-  # Lint the PHP files against parse errors.
-  - if [[ "$LINT" == "1" ]]; then if find . -name "*.php" -maxdepth 1 -exec php -l {} \; | grep "^[Parse error|Fatal error]"; then exit 1; fi; fi
-  - if [[ "$LINT" == "1" ]]; then if find config src tests views -name "*.php" -exec php -l {} \; | grep "^[Parse error|Fatal error]"; then exit 1; fi; fi
-
-  # Validate the xml file.
-  # @link http://xmlsoft.org/xmllint.html
-  - if [[ "$LINT" == "1" ]]; then xmllint --noout ./.phpcs.xml.dist; fi
-
-  # Check coding standards. Run through composer script, to allow
-  # PHP 5.2 compatibility check of main plugin file.
-  - if [[ "$SNIFF" == "1" ]]; then composer phpcs; fi
-
-  # Run tests.
-  - ./vendor/bin/phpunit --testsuite unit
-
-  # Run mutation tests.
-  - ./vendor/bin/infection
+cache:
+  apt: true
+  directories:
+    - $HOME/.composer/cache
