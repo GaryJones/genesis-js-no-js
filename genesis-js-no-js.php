@@ -38,33 +38,40 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 if ( version_compare( PHP_VERSION, '7.0', '<' ) ) {
-	if ( current_user_can( 'activate_plugins' ) ) {
-		add_action( 'admin_init', 'genesis_js_no_js_deactivate' );
-		add_action( 'admin_notices', 'genesis_js_no_js_deactivation_notice' );
+	add_action( 'plugins_loaded', 'genesis_js_no_js_init_deactivation' );
 
-		/**
-		 * Deactivate the plugin.
-		 */
-		function genesis_js_no_js_deactivate() {
-			deactivate_plugins( plugin_basename( __FILE__ ) );
+	/**
+	 * Initialise deactivation functions.
+	 */
+	function genesis_js_no_js_init_deactivation() {
+		if ( current_user_can( 'activate_plugins' ) ) {
+			add_action( 'admin_init', 'genesis_js_no_js_deactivate' );
+			add_action( 'admin_notices', 'genesis_js_no_js_deactivation_notice' );
 		}
+	}
 
-		/**
-		 * Show deactivation admin notice.
-		 */
-		function genesis_js_no_js_deactivation_notice() {
-			$notice = sprintf(
-				// Translators: 1: Required PHP version, 2: Current PHP version.
-				'<strong>Plugin name</strong> requires PHP %1$s to run. This site uses %2$s, so the plugin has been <strong>deactivated</strong>.',
-				'7.0',
-				PHP_VERSION
-			);
-			?>
-			<div class="updated"><p><?php echo wp_kses_post( $notice ); ?></p></div>
-			<?php
-			if ( isset( $_GET['activate'] ) ) { // WPCS: input var okay, CSRF okay.
-				unset( $_GET['activate'] ); // WPCS: input var okay.
-			}
+	/**
+	 * Deactivate the plugin.
+	 */
+	function genesis_js_no_js_deactivate() {
+		deactivate_plugins( plugin_basename( __FILE__ ) );
+	}
+
+	/**
+	 * Show deactivation admin notice.
+	 */
+	function genesis_js_no_js_deactivation_notice() {
+		$notice = sprintf(
+			// Translators: 1: Required PHP version, 2: Current PHP version.
+			'<strong>Genesis JS / No JS</strong> requires PHP %1$s to run. This site uses %2$s, so the plugin has been <strong>deactivated</strong>.',
+			'7.0',
+			PHP_VERSION
+		);
+		?>
+		<div class="updated"><p><?php echo wp_kses_post( $notice ); ?></p></div>
+		<?php
+		if ( isset( $_GET['activate'] ) ) { // WPCS: input var okay, CSRF okay.
+			unset( $_GET['activate'] ); // WPCS: input var okay.
 		}
 	}
 
