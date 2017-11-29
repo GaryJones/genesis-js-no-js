@@ -1,4 +1,5 @@
-vendor/
+/logs/
+/vendor/
 /.phpcs.xml
 /phpcs.xml
 /phpunit.xml

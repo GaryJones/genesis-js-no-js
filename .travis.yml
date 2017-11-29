@@ -50,3 +50,6 @@ script:
 
   # Run tests.
   - ./vendor/bin/phpunit --testsuite unit
+
+  # Run mutation tests.
+  - ./vendor/bin/infection
