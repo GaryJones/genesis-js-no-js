@@ -5,7 +5,7 @@ Tags: genesis, js-no-js
 Requires at least: 4.6
 Tested up to: 4.9.1
 Requires PHP: 7.0
-Stable tag: 3.2.0
+Stable tag: 3.2.1
 
 Make front end styling easier for child themes on the Genesis Framework based on whether JavaScript is enabled or not.
 

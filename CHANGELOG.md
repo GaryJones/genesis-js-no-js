@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Nothing yet.
 
+## [3.2.1] - 2017-11-29
+### Fixed
+- Fatal error, requiring wrong file name.
+
 ## [3.2.0] - 2017-11-29
 ### Added
 - Unit tests, with 100% code coverage.
@@ -98,7 +102,8 @@ Nothing yet.
 [Tim Jensen]: https://github.com/timothyjensen
 [Travis CI]: https://travis-ci.org/GaryJones/genesis-js-no-js
 
-[Unreleased]: https://github.com/GaryJones/genesis-js-no-js/compare/3.2.0...HEAD
+[Unreleased]: https://github.com/GaryJones/genesis-js-no-js/compare/3.2.1...HEAD
+[3.2.1]: https://github.com/GaryJones/genesis-js-no-js/compare/3.2.0...3.2.1
 [3.2.0]: https://github.com/GaryJones/genesis-js-no-js/compare/3.1.1...3.2.0
 [3.1.1]: https://github.com/GaryJones/genesis-js-no-js/compare/3.1.1...3.1.1
 [3.1.0]: https://github.com/GaryJones/genesis-js-no-js/compare/3.0.1...3.1.0
