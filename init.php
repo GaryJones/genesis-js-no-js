@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Load src files.
  */
 require __DIR__ . '/src/Plugin.php';
-require __DIR__ . '/src/GenesisJsNoJs.php';
+require __DIR__ . '/src/FrontEnd.php';
 
 $GLOBALS['genesis_js_no_js'] = new Plugin();
 $GLOBALS['genesis_js_no_js']->register();
