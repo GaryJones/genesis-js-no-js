@@ -69,7 +69,7 @@ c.add( 'js' );
 
 OUTPUT;
 
-		static::expectOutputString( $output );
+		$this->expectOutputString( $output );
 	}
 
 }
