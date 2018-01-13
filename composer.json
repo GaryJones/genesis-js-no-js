@@ -4,7 +4,7 @@
     "keywords": ["genesis", "genesis-js-no-js", "javascript"],
     "type": "wordpress-plugin",
     "homepage": "https://github.com/GaryJones/genesis-js-no-js",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Gary Jones",
