@@ -1,41 +1,39 @@
 {
     "name": "gamajo/genesis-js-no-js",
-    "description": "WordPress plugin for Genesis child themes to allow differing styles for elements if JavaScript is active or not.",
-    "keywords": ["genesis", "genesis-js-no-js", "javascript"],
     "type": "wordpress-plugin",
+    "description": "WordPress plugin for Genesis child themes to allow differing styles for elements if JavaScript is active or not.",
+    "keywords": [
+        "genesis",
+        "genesis-js-no-js",
+        "javascript"
+    ],
     "homepage": "https://github.com/GaryJones/genesis-js-no-js",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Gary Jones",
-            "homepage": "https://gamajo.com",
+            "homepage": "https://garyjones.io",
             "role": "Developer"
         }
     ],
-    "support": {
-        "issues": "https://github.com/GaryJones/genesis-js-no-js/issues",
-        "source": "https://github.com/GaryJones/genesis-js-no-js"
-    },
-    "config": {
-        "sort-order": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^7.0",
         "composer/installers": "^1"
     },
     "require-dev": {
         "php": "^7.1",
+        "automattic/phpcs-neutron-standard": "^1.5",
         "brain/monkey": "^2.2",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
-        "infection/infection": "0.6.*",
+        "infection/infection": "0.10.*",
+        "phpcompatibility/phpcompatibility-wp": "^2",
         "phpunit/phpunit": "^6.4",
-        "object-calisthenics/phpcs-calisthenics-rules": "^3",
         "roave/security-advisories": "dev-master",
-        "squizlabs/php_codesniffer": "3.1",
-        "wimg/php-compatibility": "^8.1",
-        "wp-coding-standards/wpcs": "^0.14.1"
+        "squizlabs/php_codesniffer": "3.3.2",
+        "wp-coding-standards/wpcs": "^1.1"
+    },
+    "config": {
+        "sort-order": true
     },
     "autoload": {
         "psr-4": {
@@ -47,10 +45,16 @@
             "Gamajo\\GenesisJsNoJs\\Tests\\": "tests/"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
         "install-codestandards": [
             "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
         ],
         "phpcs": "phpcs && phpcs ./genesis-js-no-js.php -sp --standard=PHPCompatibility --runtime-set testVersion 5.2 && phpcs ./tests -sp --standard=PHPCompatibility --runtime-set testVersion 7.1"
+    },
+    "support": {
+        "issues": "https://github.com/GaryJones/genesis-js-no-js/issues",
+        "source": "https://github.com/GaryJones/genesis-js-no-js"
     }
 }

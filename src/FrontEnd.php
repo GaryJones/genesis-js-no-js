@@ -60,6 +60,6 @@ c.add( 'js' );
 })();
 //]]>
 </script>
-<?php
+<?php // phpcs:ignore Generic.WhiteSpace.ScopeIndent.Incorrect -- Can't indent, otherwise FrontEndTest will fail, until flexible heredoc/nowdoc is support
 	}
 }
